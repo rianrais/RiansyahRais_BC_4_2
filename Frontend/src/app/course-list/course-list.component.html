@@ -1,0 +1,31 @@
+
+<div class="container regiform">
+  <div class="field">
+    <br>
+    <label class="label">Course Name</label>
+    <p class="control has-icons-left has-icons-right">
+      <input class="input is-success" type="text" placeholder="Insert new course name" [(ngModel)]="newCourseName" >
+    </p>
+  </div>
+  <p class="control">
+    <a class="button is-primary" (click)="addCourse()">
+      Add New Course
+    </a>
+  </p>
+</div>
+<br>
+<hr>
+<div class="container is-fluid">
+  <table class="table is-striped">
+    <thead>
+      <tr>
+        <th>Course Name</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let list of this.api.courseList; let i of index">
+        <td>{{list.course_name}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
